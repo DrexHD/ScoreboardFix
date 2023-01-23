@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "scoreboard-fix",
+  "version": "${version}",
+  "name": "Scoreboard Fix",
+  "description": "If a player changed their name, this mod will update all scoreboard entries to reflect the change",
+  "authors": [
+    "Drex"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.drex.scoreboard_fix.ScoreboardFixMod"
+    ]
+  },
+  "mixins": [
+    "scoreboard-fix.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.10"
+  }
+}
