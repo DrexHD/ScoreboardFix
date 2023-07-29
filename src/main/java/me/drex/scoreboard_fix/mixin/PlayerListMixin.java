@@ -31,7 +31,7 @@ public abstract class PlayerListMixin {
                     target = "Lnet/minecraft/server/players/GameProfileCache;add(Lcom/mojang/authlib/GameProfile;)V"),
             locals = LocalCapture.CAPTURE_FAILHARD
     )
-    public void detectPlayerNameChange(Connection connection, ServerPlayer serverPlayer, CallbackInfo ci, GameProfile gameProfile, GameProfileCache gameProfileCache, Optional<GameProfile> optional, String previousName) {
+    public void detectPlayerNameChange(Connection connection, ServerPlayer serverPlayer, CallbackInfo ci, GameProfile gameProfile, GameProfileCache gameProfileCache, String previousName, Optional<GameProfile> optional) {
         String updatedName = serverPlayer.getGameProfile().getName();
         if (!updatedName.equalsIgnoreCase(previousName)) {
             ScoreboardFixMod.updateScoreboardEntries(this.server.getScoreboard(), previousName, updatedName);
